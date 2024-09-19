@@ -222,9 +222,9 @@ def pad_to_block_size(text, block_size, bZeroPad):
 #
 #******************************************************************************
 def encrypt_app_aes(cleartext, encKey, iv):
-    key = array.array('B', encKey).tostring()
-    ivVal = array.array('B', iv).tostring()
-    plaintext = array.array('B', cleartext).tostring()
+    key = array.array('B', encKey).tobytes()
+    ivVal = array.array('B', iv).tobytes()
+    plaintext = array.array('B', cleartext).tobytes()
 
     encryption_suite = AES.new(key, AES.MODE_CBC, ivVal)
     cipher_text = encryption_suite.encrypt(plaintext)
@@ -237,9 +237,9 @@ def encrypt_app_aes(cleartext, encKey, iv):
 #
 #******************************************************************************
 def encrypt_app_aes128(cleartext, encKey, iv):
-    key = array.array('B', encKey).tostring()
-    ivVal = array.array('B', iv).tostring()
-    plaintext = array.array('B', cleartext).tostring()
+    key = array.array('B', encKey).tobytes()
+    ivVal = array.array('B', iv).tobytes()
+    plaintext = array.array('B', cleartext).tobytes()
 
     encryption_suite = AES.new(key, AES.MODE_CBC, ivVal)
     cipher_text = encryption_suite.encrypt(plaintext)
@@ -252,7 +252,7 @@ def encrypt_app_aes128(cleartext, encKey, iv):
 #
 #******************************************************************************
 def compute_hmac(key, data):
-    sig = hmac.new(array.array('B', key).tostring(), array.array('B', data).tostring(), hashlib.sha256).digest()
+    sig = hmac.new(array.array('B', key).tobytes(), array.array('B', data).tobytes(), hashlib.sha256).digest()
     return sig
 
 #******************************************************************************

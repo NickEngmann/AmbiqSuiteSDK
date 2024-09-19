@@ -64,10 +64,10 @@
 #define CRYPT_DEFAULT_AES128          1
 #define CRYPT_ALGO                    CRYPT_DEFAULT_AES128
 
-#define MAIN_PROGRAM_ADDR_IN_FLASH    0x80000 // This could be hardcoded, or derived from INFO0 (preferred)
+// #define MAIN_PROGRAM_ADDR_IN_FLASH    0x80000 // This could be hardcoded, or derived from INFO0 (preferred)
 
 // Test the XIP from MSPI1
-// #define MAIN_PROGRAM_ADDR_IN_FLASH      0x4000000 // This could be hardcoded, or derived from INFO0 (preferred)
+#define MAIN_PROGRAM_ADDR_IN_FLASH      0x4000000 // This could be hardcoded, or derived from INFO0 (preferred)
 
 // Customer Proprietary image in internal flash
 #define MAGIC_CUST_PROP                 0xC2
